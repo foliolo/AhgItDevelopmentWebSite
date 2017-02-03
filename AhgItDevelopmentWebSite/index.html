@@ -1,11 +1,109 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <base href="/">
+
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge; charset=utf-8">
+    <meta name="description" content="ahgitdevelopment website">
+    <meta name="author" content="Alberto Hidalgo (hgarica.alberto.gp@gmail.com)">
+
     <title>AHGITDEVELOPMENT.com</title>
-	<meta charset="utf-8" />
+
+    <!--STYLESHEET-->
+    <link href="Content/css/material-icons-font.css" rel="stylesheet" />
+    <link href="Content/css/angular-material.layout-attributes.css" rel="stylesheet" />
+    <link href="Content/css/angular-material.layout-attributes.min.css" rel="stylesheet" />
+    <link href="Content/css/angular-material.layouts.css" rel="stylesheet" />
+    <link href="Content/css/angular-material.layouts.ie_fixes.css" rel="stylesheet" />
+    <link href="Content/css/angular-material.layouts.min.css" rel="stylesheet" />
+    <link href="Content/css/angular-material.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--SCRIPTS-->
+    <script src="Scripts/angular/angular.min.js"></script>
+    <script src="Scripts/angular-animate/angular-animate.min.js"></script>
+    <script src="Scripts/angular-aria/angular-aria.min.js"></script>
+    <script src="Scripts/angular-material/angular-material.min.js"></script>
+    <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+
+    <!--CORE-->
+    <script src="Core/app.js"></script>
+    <script src="Core/urls.factory.js"></script>
+
+    <!--CONTROLLERS-->
+    <script src="Controllers/sidenav.controller.js"></script>
+
 </head>
-<body>
+
+<body ng-app="website">
+
+
+    <div layout="row" layout-wrap style="height: 50px">
+        <div flex="33" style="align-items:center">
+            [flex="33"]
+        </div>
+        <div flex="66" style="align-items:flex-end">
+            [flex="66"]
+        </div>
+    </div>
+
+    <div ng-controller="NavCtrl" layout="column" style="height:500px;" ng-cloak="" class="sidenavdemoBasicUsage" ng-app="MyApp">
+
+        <section layout="row" flex="">
+
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
+
+                <md-toolbar class="md-theme-indigo">
+                    
+                    <h1 class="md-toolbar-tools"> 
+                        <i style="margin:10px" class="material-icons md-36 orange600">menu</i> Sidenav Left
+                    </h1>
+                </md-toolbar>
+                <md-content layout-padding="" ng-controller="LeftCtrl">
+                    <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+                        Close Sidenav Left
+                    </md-button>
+                    <p hide="" show-gt-md="">
+                        This sidenav is locked open on your device. To go back to the default behavior,
+                        narrow your display.
+                    </p>
+                </md-content>
+
+            </md-sidenav>
+
+            <md-content flex="" layout-padding="">
+
+                <div layout="column" layout-align="top center">
+                    <p>
+                        The left sidenav will 'lock open' on a medium (=960px wide) device.
+                    </p>
+
+
+                    <div>
+                        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
+                            Toggle left
+                        </md-button>
+                    </div>
+
+                </div>
+
+                <div flex=""></div>
+
+            </md-content>
+
+
+        </section>
+
+    </div>
+
+    <!--
+    Copyright 2016 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+    -->
 
 </body>
 </html>
